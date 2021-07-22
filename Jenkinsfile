@@ -38,7 +38,7 @@ pipeline{
     stage('K8 Deploy') {
       steps{
         sh 'chmod +x tagchange.sh'
-        sh './tagchange.sh '$BUILD_NUMBER''
+        sh './tagchange.sh $BUILD_NUMBER'
         script{
           kubernetesDeploy(
             configs: 'kb/node_deployment.yaml',
