@@ -34,6 +34,8 @@ pipeline{
             dockerImage.push()
           }
         }
+      }
+    }
     stage('K8 Deploy') {
       steps{
         script{
@@ -44,6 +46,6 @@ pipeline{
         }
       }
     }
-    }
+  }
 }
 
