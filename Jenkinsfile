@@ -40,7 +40,7 @@ pipeline{
       steps{
         script{
           kubernetesDeploy(
-            configs: 'node_deployment.yaml',
+            configs: '$PWD/kb/node_deployment.yaml',
              enableConfigSubstitution: true
             )
         }
