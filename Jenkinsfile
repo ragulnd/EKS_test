@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment {
     registry = "ragulnd/testnodejs"
-    registryCredential = ‘dockerhub’
+    registryCredential = 'dockerhub'
     dockerImage=''
     kubeconfigId= 'kubenetes'
   }
@@ -10,7 +10,7 @@ pipeline{
 
        stage('Cloning Git') {
       steps {
-        git 'https://github.com/gustavoapolinario/node-todo-frontend'
+        git 'https://github.com/ragulnd/EKS_test.git'
       }
     }
     stage('Build') {
