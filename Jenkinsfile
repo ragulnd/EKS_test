@@ -4,6 +4,7 @@ pipeline{
     registry = "ragulnd/testnodejs"
     registryCredential = ‘dockerhub’
     dockerImage=''
+    kubeconfigId= 'kubenetes'
   }
     stages{
 
@@ -33,6 +34,16 @@ pipeline{
             dockerImage.push()
           }
         }
+    stage('K8 Deploy') {
+      steps{
+        script{
+          kubernetesDeploy(
+            configs: 'node_deployment.yaml',
+             enableConfigSubstitution: true
+            )
+        }
+      }
+    }
     }
 }
 
